@@ -46,7 +46,10 @@ file.readFile("Jsonfile.json",(err,Jsonfile) => {
     
          } 
       }
-     
+    }
+    catch (err) {
+        console.log("Error in reading from folder",err);
+            }
      const ndata = json.stringfy(OData,null,4);
      file.writeFile("Jsonfile",data,err  => {
           if(err){
@@ -60,3 +63,4 @@ file.readFile("Jsonfile.json",(err,Jsonfile) => {
            }
          });
      }
+});

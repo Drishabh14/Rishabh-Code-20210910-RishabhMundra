@@ -46,4 +46,17 @@ file.readFile("Jsonfile.json",(err,Jsonfile) => {
     
          } 
       }
+     
+     const ndata = json.stringfy(OData,null,4);
+     file.writeFile("Jsonfile",data,err  => {
+          if(err){
+              console.log(err);
+          }
+           else{
+               console.log("Successful");
+               let ndata = file.readFileSync('Jsonfile.json');
+               let d = JSON.parse(ndata);
+               console.table(d);
+           }
+         });
      }
